@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>L'Eclat de Vert · Documents</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+      background: #f5f5f7; color: #1d1d1f;
+      padding: 48px 24px 80px;
+    }
+    .container { max-width: 800px; margin: 0 auto; }
+
+    .page-header { margin-bottom: 48px; }
+    .page-header h1 { font-size: 28px; font-weight: 700; letter-spacing: -.4px; }
+    .page-header p { font-size: 14px; color: #6e6e73; margin-top: 6px; }
+
+    .section { margin-bottom: 40px; }
+    .section-title {
+      font-size: 11px; font-weight: 700; letter-spacing: .07em;
+      text-transform: uppercase; color: #86868b;
+      margin-bottom: 14px; padding-bottom: 10px;
+      border-bottom: 1px solid #e5e5ea;
+    }
+
+    .card-list { display: flex; flex-direction: column; gap: 10px; }
+    .card {
+      display: flex; align-items: center; gap: 16px;
+      background: #fff; border-radius: 14px; padding: 18px 20px;
+      box-shadow: 0 1px 3px rgba(0,0,0,.06), 0 4px 12px rgba(0,0,0,.04);
+      text-decoration: none; color: inherit;
+      transition: box-shadow .15s, transform .15s;
+    }
+    .card:hover {
+      box-shadow: 0 2px 8px rgba(0,0,0,.1), 0 8px 24px rgba(0,0,0,.07);
+      transform: translateY(-1px);
+    }
+    .card-icon {
+      width: 40px; height: 40px; border-radius: 10px;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .icon-blue   { background: #e8f1fb; }
+    .icon-purple { background: #f0e8fc; }
+    .icon-green  { background: #e6f9ec; }
+    .icon-orange { background: #fff3e8; }
+    .icon-red    { background: #fff0f0; }
+
+    .card-body { flex: 1; min-width: 0; }
+    .card-title { font-size: 14px; font-weight: 600; color: #1d1d1f; }
+    .card-meta  { font-size: 12px; color: #86868b; margin-top: 3px; }
+    .card-arrow { color: #c7c7cc; flex-shrink: 0; }
+
+    footer {
+      text-align: center; font-size: 12px; color: #aeaeb2; margin-top: 56px;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <div class="page-header">
+    <h1>L'Eclat de Vert</h1>
+    <p>2 rue des Deux Bois, 76130 Mont Saint Aignan &nbsp;·&nbsp; Documents copropriété</p>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Procédure Judiciaire</div>
+    <div class="card-list">
+
+      <a class="card" href="procedure-judiciaire-public.html">
+        <div class="card-icon icon-orange">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c2620a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+            <polyline points="14 2 14 8 20 8"/>
+            <line x1="16" y1="13" x2="8" y2="13"/>
+            <line x1="16" y1="17" x2="8" y2="17"/>
+            <polyline points="10 9 9 9 8 9"/>
+          </svg>
+        </div>
+        <div class="card-body">
+          <div class="card-title">Etat de la procédure</div>
+          <div class="card-meta">Information aux copropriétaires · Acteurs, timeline, prochaines étapes · Mai 2026</div>
+        </div>
+        <div class="card-arrow">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </div>
+      </a>
+
+      <a class="card" href="procedure-judiciaire-recap.html">
+        <div class="card-icon icon-purple">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6e3bc7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+        </div>
+        <div class="card-body">
+          <div class="card-title">Analyse · Conseil syndical</div>
+          <div class="card-meta">Risques, actions prioritaires, analyse détaillée · Réservé au CS · Mai 2026</div>
+        </div>
+        <div class="card-arrow">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  L'Eclat de Vert &nbsp;·&nbsp; Copropriété 2 rue des Deux Bois, 76130 Mont Saint Aignan
+</footer>
+
+</body>
+</html>
