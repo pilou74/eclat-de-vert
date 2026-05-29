@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Procédure Judiciaire - L'Eclat de Vert</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      background: #f5f5f7;
+      color: #1d1d1f;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .header {
+      background: #1d1d1f;
+      color: #f5f5f7;
+      padding: 40px 48px 32px;
+    }
+    .header-label {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #888;
+      margin-bottom: 10px;
+    }
+    .header h1 {
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 6px;
+    }
+    .header-sub {
+      font-size: 14px;
+      color: #aaa;
+    }
+    .badge {
+      display: inline-block;
+      background: #ff9500;
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 20px;
+      margin-left: 12px;
+      vertical-align: middle;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 24px;
+    }
+
+    section { margin-bottom: 48px; }
+    section h2 {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #888;
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    .summary-box {
+      background: white;
+      border-radius: 12px;
+      padding: 24px 28px;
+      border-left: 4px solid #007aff;
+    }
+    .summary-box p { margin-bottom: 10px; color: #333; }
+    .summary-box p:last-child { margin-bottom: 0; }
+    .highlight { font-weight: 600; color: #1d1d1f; }
+
+    .info-note {
+      background: #fff8e6;
+      border-radius: 10px;
+      padding: 14px 18px;
+      font-size: 13px;
+      color: #7a5c00;
+      margin-bottom: 24px;
+      border-left: 3px solid #ff9500;
+    }
+
+    .actors-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .actor-group {
+      background: white;
+      border-radius: 12px;
+      padding: 20px 24px;
+    }
+    .actor-group h3 {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #888;
+      margin-bottom: 14px;
+    }
+    .actor-row {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 10px;
+      gap: 10px;
+    }
+    .actor-row:last-child { margin-bottom: 0; }
+    .actor-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      margin-top: 6px;
+      flex-shrink: 0;
+    }
+    .dot-blue { background: #007aff; }
+    .dot-red { background: #ff3b30; }
+    .dot-orange { background: #ff9500; }
+    .dot-purple { background: #af52de; }
+    .dot-gray { background: #8e8e93; }
+    .actor-name { font-weight: 600; font-size: 14px; }
+    .actor-role { font-size: 12px; color: #666; }
+
+    .timeline {
+      position: relative;
+      padding-left: 28px;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 7px;
+      top: 8px;
+      bottom: 8px;
+      width: 2px;
+      background: #e0e0e0;
+    }
+    .tl-item {
+      position: relative;
+      margin-bottom: 0;
+      padding-bottom: 4px;
+    }
+    .tl-dot {
+      position: absolute;
+      left: -24px;
+      top: 6px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      border: 2px solid white;
+      box-shadow: 0 0 0 1px #ccc;
+      background: #8e8e93;
+      z-index: 1;
+    }
+    .tl-dot.done { background: #34c759; box-shadow: 0 0 0 1px #34c759; }
+    .tl-dot.key { background: #007aff; box-shadow: 0 0 0 1px #007aff; width: 14px; height: 14px; left: -25px; top: 5px; }
+    .tl-dot.alert { background: #ff9500; box-shadow: 0 0 0 1px #ff9500; width: 14px; height: 14px; left: -25px; top: 5px; }
+    .tl-dot.upcoming { background: white; box-shadow: 0 0 0 2px #007aff; }
+
+    .tl-year {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #aaa;
+      margin: 24px 0 12px;
+    }
+    .tl-year:first-child { margin-top: 0; }
+
+    .tl-card {
+      background: white;
+      border-radius: 10px;
+      padding: 14px 18px;
+      margin-bottom: 8px;
+    }
+    .tl-card.key-event { border-left: 3px solid #007aff; }
+    .tl-card.alert-event { border-left: 3px solid #ff9500; }
+    .tl-card.upcoming-event { border-left: 3px solid #007aff; background: #f0f7ff; }
+
+    .tl-date {
+      font-size: 11px;
+      font-weight: 600;
+      color: #888;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 3px;
+    }
+    .tl-title {
+      font-weight: 600;
+      font-size: 14px;
+      color: #1d1d1f;
+      margin-bottom: 3px;
+    }
+    .tl-desc { font-size: 13px; color: #555; }
+    .tl-tag {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 2px 8px;
+      border-radius: 20px;
+      margin-top: 6px;
+    }
+    .tag-done { background: #d1fadf; color: #166534; }
+    .tag-pending { background: #fff3cd; color: #92400e; }
+    .tag-upcoming { background: #dbeafe; color: #1e40af; }
+
+    .costs-box {
+      background: white;
+      border-radius: 12px;
+      padding: 20px 24px;
+    }
+    .cost-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 0;
+      border-bottom: 1px solid #f0f0f0;
+      font-size: 14px;
+    }
+    .cost-item:last-child { border-bottom: none; padding-bottom: 0; }
+    .cost-item:first-child { padding-top: 0; }
+    .cost-sub {
+      padding-left: 20px;
+      color: #888;
+      font-size: 13px;
+    }
+    .cost-label { color: #555; }
+    .cost-amount { font-weight: 600; }
+    .cost-total {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 12px;
+      margin-top: 4px;
+      border-top: 2px solid #1d1d1f;
+      font-weight: 700;
+      font-size: 15px;
+    }
+
+    .steps-list { display: flex; flex-direction: column; gap: 10px; }
+    .step-item {
+      background: white;
+      border-radius: 10px;
+      padding: 16px 20px;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+    .step-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+      flex-shrink: 0;
+    }
+    .step-icon.orange { background: #fff3cd; }
+    .step-icon.blue { background: #dbeafe; }
+    .step-body { flex: 1; }
+    .step-title { font-weight: 600; font-size: 14px; margin-bottom: 3px; }
+    .step-desc { font-size: 13px; color: #555; }
+
+    .footer {
+      text-align: center;
+      font-size: 12px;
+      color: #aaa;
+      padding: 24px;
+      border-top: 1px solid #e0e0e0;
+    }
+
+    @media (max-width: 640px) {
+      .actors-grid { grid-template-columns: 1fr; }
+      .header { padding: 28px 20px 24px; }
+      .container { padding: 28px 16px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-label">Syndicat des copropriétaires - Eclat de Vert</div>
+  <h1>Procédure Judiciaire <span class="badge">En cours</span></h1>
+  <div class="header-sub">2 rue des Deux Bois, 76130 Mont Saint Aignan &nbsp;·&nbsp; Information aux copropriétaires &nbsp;·&nbsp; Mai 2026</div>
+</div>
+
+<div class="container">
+
+  <div class="info-note">
+    Ce document a été préparé par le Conseil syndical afin de tenir l'ensemble des copropriétaires informés de l'état d'avancement de la procédure judiciaire en cours. Il sera complété au fil des développements.
+  </div>
+
+  <!-- RÉSUMÉ -->
+  <section>
+    <h2>Résumé de la situation</h2>
+    <div class="summary-box">
+      <p>Le syndicat des copropriétaires de L'Eclat de Vert est engagé dans une <span class="highlight">procédure judiciaire relative à des désordres affectant les balcons, la façade et une fissure entre les appartements A21 et A22</span>. Ces désordres sont imputables à des malfaçons de construction.</p>
+      <p>La procédure est active depuis plusieurs années. Les assignations formelles contre l'architecte responsable et ses assureurs ont été déposées en <span class="highlight">octobre 2024</span>. Une audience en référé s'est tenue le 26 juin 2025 devant le Tribunal judiciaire de Rouen.</p>
+      <p>Une nouvelle expertise judiciaire est planifiée le <span class="highlight">10 juin 2026</span>, et un point complet sera présenté lors de l'<span class="highlight">Assemblée Générale du 30 juin 2026</span>.</p>
+    </div>
+  </section>
+
+  <!-- ACTEURS -->
+  <section>
+    <h2>Les parties impliquées</h2>
+    <div class="actors-grid">
+
+      <div class="actor-group">
+        <h3>Le syndicat et ses représentants</h3>
+        <div class="actor-row">
+          <div class="actor-dot dot-blue"></div>
+          <div>
+            <div class="actor-name">Maître Romain BLANDIN</div>
+            <div class="actor-role">Avocat du syndicat, Cabinet DPR Avocat, Rouen</div>
+          </div>
+        </div>
+        <div class="actor-row">
+          <div class="actor-dot dot-blue"></div>
+          <div>
+            <div class="actor-name">Century 21 Harmony</div>
+            <div class="actor-role">Syndic de copropriété, 1 rue Malherbe, Rouen. Gestionnaires : Fanny BLONDEL et Alexandra FONTAINE</div>
+          </div>
+        </div>
+        <div class="actor-row">
+          <div class="actor-dot dot-blue"></div>
+          <div>
+            <div class="actor-name">Conseil syndical</div>
+            <div class="actor-role">Emmanuel PINSARD, Philippe BALLESIO, Jean-Claude FERTE, Brigitte BASTIEGE, Mathilde LATIMIER</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="actor-group">
+        <h3>Les parties adverses</h3>
+        <div class="actor-row">
+          <div class="actor-dot dot-red"></div>
+          <div>
+            <div class="actor-name">ARCHITHEOS</div>
+            <div class="actor-role">Architecte du bâtiment, mis en cause pour les désordres constatés</div>
+          </div>
+        </div>
+        <div class="actor-row">
+          <div class="actor-dot dot-red"></div>
+          <div>
+            <div class="actor-name">MAF</div>
+            <div class="actor-role">Mutuelle des Architectes Français, assureur d'ARCHITHEOS</div>
+          </div>
+        </div>
+        <div class="actor-row">
+          <div class="actor-dot dot-red"></div>
+          <div>
+            <div class="actor-name">MMA</div>
+            <div class="actor-role">Assureur constructeur / maître d'oeuvre</div>
+          </div>
+        </div>
+        <div class="actor-row">
+          <div class="actor-dot dot-red"></div>
+          <div>
+            <div class="actor-name">SMABTP</div>
+            <div class="actor-role">Assureur secteur BTP, assigné en octobre 2024</div>
+          </div>
+        </div>
+        <div class="actor-row">
+          <div class="actor-dot dot-orange"></div>
+          <div>
+            <div class="actor-name">EDELIS</div>
+            <div class="actor-role">Assureur Dommages-Ouvrage (DO)</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="actor-group">
+        <h3>Experts judiciaires</h3>
+        <div class="actor-row">
+          <div class="actor-dot dot-purple"></div>
+          <div>
+            <div class="actor-name">SARETEC</div>
+            <div class="actor-role">Expert judiciaire désigné par le Tribunal judiciaire de Rouen</div>
+          </div>
+        </div>
+        <div class="actor-row">
+          <div class="actor-dot dot-gray"></div>
+          <div>
+            <div class="actor-name">LIOREL / FOLLET</div>
+            <div class="actor-role">Experts mandatés par les parties adverses</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="actor-group">
+        <h3>Juridiction</h3>
+        <div class="actor-row">
+          <div class="actor-dot dot-gray"></div>
+          <div>
+            <div class="actor-name">Tribunal judiciaire de Rouen</div>
+            <div class="actor-role">Juridiction compétente pour cette procédure</div>
+          </div>
+        </div>
+        <div class="actor-row">
+          <div class="actor-dot dot-gray"></div>
+          <div>
+            <div class="actor-name">AKERYS PROMOTION</div>
+            <div class="actor-role">Promoteur immobilier d'origine de la résidence</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section>
+    <h2>Chronologie</h2>
+    <div class="timeline">
+
+      <div class="tl-year">Avant 2024</div>
+
+      <div class="tl-item">
+        <div class="tl-dot done"></div>
+        <div class="tl-card">
+          <div class="tl-date">2021-2022 (estimé)</div>
+          <div class="tl-title">Ouverture de la procédure d'expertise judiciaire</div>
+          <div class="tl-desc">Constat des désordres sur les balcons et la façade. Désignation de l'expert judiciaire SARETEC par le Tribunal. Début des échanges contradictoires entre toutes les parties.</div>
+          <span class="tl-tag tag-done">Accompli</span>
+        </div>
+      </div>
+
+      <div class="tl-year">2024</div>
+
+      <div class="tl-item">
+        <div class="tl-dot done"></div>
+        <div class="tl-card">
+          <div class="tl-date">Mai - Septembre 2024</div>
+          <div class="tl-title">Validation du 6e dire et décision d'assigner</div>
+          <div class="tl-desc">Le Conseil syndical, après consultation de Maître Blandin, décide d'engager des assignations en référé contre l'architecte ARCHITHEOS et les assureurs concernés. Accord unanime du CS.</div>
+          <span class="tl-tag tag-done">Accompli</span>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot key"></div>
+        <div class="tl-card key-event">
+          <div class="tl-date">Octobre 2024</div>
+          <div class="tl-title">Dépôt des assignations</div>
+          <div class="tl-desc">Assignations en référé déposées contre ARCHITHEOS/MAF et MMA le 16 octobre, puis contre SMABTP le 23 octobre. Déclaration Dommages-Ouvrage transmise à EDELIS. Signification des actes par huissiers.</div>
+          <span class="tl-tag tag-done">Accompli</span>
+        </div>
+      </div>
+
+      <div class="tl-year">2025</div>
+
+      <div class="tl-item">
+        <div class="tl-dot done"></div>
+        <div class="tl-card">
+          <div class="tl-date">Janvier - Février 2025</div>
+          <div class="tl-title">Ordonnances complémentaires</div>
+          <div class="tl-desc">Le juge rend deux ordonnances complémentaires. Nouvelle assignation contre MMA sur le volet Dommages-Ouvrage. Versements de consignations conformément aux ordonnances du tribunal.</div>
+          <span class="tl-tag tag-done">Accompli</span>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot key"></div>
+        <div class="tl-card key-event">
+          <div class="tl-date">26 mars 2025</div>
+          <div class="tl-title">Conférence d'expertise contradictoire</div>
+          <div class="tl-desc">Réunion d'expertise en présence de toutes les parties et de leurs experts respectifs. Le Conseil syndical était représenté. Objet : examen des désordres des balcons et de la fissure entre les appartements A21 et A22.</div>
+          <span class="tl-tag tag-done">Accompli</span>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot done"></div>
+        <div class="tl-card">
+          <div class="tl-date">Mai 2025</div>
+          <div class="tl-title">Dépôt des conclusions en réponse</div>
+          <div class="tl-desc">Maître Blandin dépose les conclusions du syndicat en réponse aux arguments des parties adverses. Document validé par le Conseil syndical.</div>
+          <span class="tl-tag tag-done">Accompli</span>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot key"></div>
+        <div class="tl-card key-event">
+          <div class="tl-date">26 juin 2025</div>
+          <div class="tl-title">Audience en référé au Tribunal judiciaire de Rouen</div>
+          <div class="tl-desc">Toutes les parties sont entendues par le juge des référés. A l'issue de l'audience, la décision est mise en délibéré au 19 août 2025.</div>
+          <span class="tl-tag tag-done">Accompli</span>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot alert"></div>
+        <div class="tl-card alert-event">
+          <div class="tl-date">19 août 2025</div>
+          <div class="tl-title">Délibéré du juge des référés</div>
+          <div class="tl-desc">Date annoncée pour la décision. Le Conseil syndical est en attente d'un point complet de notre avocat sur les suites données à cette décision. Les expertises complémentaires ordonnées confirment la poursuite active de la procédure.</div>
+          <span class="tl-tag tag-pending">Point en cours</span>
+        </div>
+      </div>
+
+      <div class="tl-year">2026</div>
+
+      <div class="tl-item">
+        <div class="tl-dot upcoming"></div>
+        <div class="tl-card upcoming-event">
+          <div class="tl-date">10 juin 2026</div>
+          <div class="tl-title">Nouvelle expertise judiciaire</div>
+          <div class="tl-desc">Expertise complémentaire portant sur les balcons et la fissure entre les appartements A21 et A22. Cette expertise permettra de préciser l'étendue des désordres et les responsabilités.</div>
+          <span class="tl-tag tag-upcoming">A venir</span>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot upcoming"></div>
+        <div class="tl-card upcoming-event">
+          <div class="tl-date">30 juin 2026</div>
+          <div class="tl-title">Assemblée Générale : point d'information complet</div>
+          <div class="tl-desc">Un point détaillé sur l'état de la procédure, ses perspectives et ses implications financières sera présenté lors de l'AG annuelle (point 14 de l'ordre du jour).</div>
+          <span class="tl-tag tag-upcoming">AG</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- COUTS -->
+  <section>
+    <h2>Frais engagés en 2025</h2>
+    <div class="costs-box">
+      <div class="cost-item">
+        <span class="cost-label">Honoraires d'avocat (Cabinet DPR Avocat)</span>
+        <span class="cost-amount">14 304,74 €</span>
+      </div>
+      <div class="cost-item cost-sub">
+        <span class="cost-label">dont consignations judiciaires (provisions ordonnées par le tribunal)</span>
+        <span class="cost-amount">9 000,00 €</span>
+      </div>
+      <div class="cost-item">
+        <span class="cost-label">Frais de procédure (huissiers, actes)</span>
+        <span class="cost-amount">954,56 €</span>
+      </div>
+      <div class="cost-item">
+        <span class="cost-label">Vacations syndic liées aux expertises</span>
+        <span class="cost-amount">1 350,00 €</span>
+      </div>
+      <div class="cost-total">
+        <span>Total frais judiciaires 2025</span>
+        <span>16 609,30 €</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCHAINES ETAPES -->
+  <section>
+    <h2>Prochaines etapes</h2>
+    <div class="steps-list">
+
+      <div class="step-item">
+        <div class="step-icon orange">📋</div>
+        <div class="step-body">
+          <div class="step-title">Expertise du 10 juin 2026</div>
+          <div class="step-desc">Cette expertise contradictoire permettra à l'expert judiciaire SARETEC de compléter son rapport sur les désordres des balcons et la fissure A21/A22, en présence de toutes les parties et de leurs experts.</div>
+        </div>
+      </div>
+
+      <div class="step-item">
+        <div class="step-icon orange">⚖️</div>
+        <div class="step-body">
+          <div class="step-title">Point complet de notre avocat</div>
+          <div class="step-desc">Le Conseil syndical demande à Maître Blandin, par l'intermédiaire du syndic, un bilan complet de la situation actuelle incluant les suites du délibéré du 19 août 2025 et les perspectives de la procédure.</div>
+        </div>
+      </div>
+
+      <div class="step-item">
+        <div class="step-icon blue">📢</div>
+        <div class="step-body">
+          <div class="step-title">Information à l'AG du 30 juin 2026</div>
+          <div class="step-desc">L'ensemble des copropriétaires sera informé des derniers développements lors de l'Assemblée Générale. Des éléments complémentaires issus de l'expertise du 10 juin seront communiqués dans la mesure du possible.</div>
+        </div>
+      </div>
+
+      <div class="step-item">
+        <div class="step-icon blue">🔄</div>
+        <div class="step-body">
+          <div class="step-title">Suivi régulier et mises a jour</div>
+          <div class="step-desc">Le Conseil syndical s'engage à tenir les copropriétaires informés de tout développement significatif dans ce dossier, notamment en cas de décision judiciaire ou d'avancée notable dans l'expertise.</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</div>
+
+<div class="footer">
+  L'Eclat de Vert &nbsp;·&nbsp; 2 rue des Deux Bois, 76130 Mont Saint Aignan &nbsp;·&nbsp; Information préparée par le Conseil syndical &nbsp;·&nbsp; Mai 2026
+</div>
+
+</body>
+</html>
