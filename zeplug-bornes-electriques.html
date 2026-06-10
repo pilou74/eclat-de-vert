@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZEPLUG - Bornes de Recharge VE - Eclat de Vert</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; background: #f5f5f7; color: #1d1d1f; font-size: 15px; line-height: 1.6; }
+    .header { background: #1d1d1f; color: #f5f5f7; padding: 40px 48px 32px; }
+    .header-label { font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #888; margin-bottom: 10px; }
+    .header h1 { font-size: 28px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 6px; }
+    .header-sub { font-size: 14px; color: #aaa; }
+    .back-link { display: inline-block; color: #007aff; text-decoration: none; font-size: 13px; font-weight: 600; margin-bottom: 16px; }
+    .back-link:hover { text-decoration: underline; }
+    .container { max-width: 1000px; margin: 0 auto; padding: 40px 24px; }
+    section { margin-bottom: 48px; }
+    section h2 { font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #888; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid #e0e0e0; }
+    .summary-box { background: white; border-radius: 12px; padding: 24px 28px; border-left: 4px solid #ff9500; }
+    .summary-box p { margin-bottom: 10px; color: #333; }
+    .summary-box p:last-child { margin-bottom: 0; }
+    .highlight { font-weight: 600; color: #1d1d1f; }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .card { background: white; border-radius: 12px; padding: 20px 24px; }
+    .card h3 { font-size: 14px; font-weight: 700; margin-bottom: 12px; color: #1d1d1f; }
+    .card p { font-size: 13px; color: #555; margin-bottom: 8px; }
+    .card p:last-child { margin-bottom: 0; }
+    .price-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .price-card { background: white; border-radius: 12px; padding: 20px; text-align: center; }
+    .price-card .kw { font-size: 20px; font-weight: 800; color: #ff9500; margin-bottom: 4px; }
+    .price-card .real-price { font-size: 12px; color: #888; text-decoration: line-through; margin-bottom: 2px; }
+    .price-card .promo-price { font-size: 22px; font-weight: 800; color: #1d1d1f; margin-bottom: 4px; }
+    .price-card .note { font-size: 11px; color: #888; }
+    .price-card .abo { font-size: 13px; color: #555; margin-top: 8px; padding-top: 8px; border-top: 1px solid #f0f0f0; }
+    .risk-card { background: white; border-radius: 12px; padding: 20px 24px; margin-bottom: 12px; display: flex; gap: 16px; align-items: flex-start; }
+    .risk-level { font-size: 10px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; writing-mode: vertical-lr; transform: rotate(180deg); padding: 8px 0; flex-shrink: 0; border-radius: 4px; width: 22px; text-align: center; }
+    .risk-high { background: #fff3cd; color: #92400e; }
+    .risk-medium { background: #dbeafe; color: #1e40af; }
+    .risk-info { background: #d1fadf; color: #166534; }
+    .risk-body { flex: 1; }
+    .risk-title { font-weight: 700; font-size: 15px; margin-bottom: 6px; }
+    .risk-desc { font-size: 13px; color: #555; margin-bottom: 8px; }
+    .risk-question { background: #f5f5f7; border-radius: 8px; padding: 10px 14px; font-size: 13px; }
+    .risk-question strong { color: #007aff; }
+    .step-list { display: flex; flex-direction: column; gap: 10px; }
+    .step-item { background: white; border-radius: 10px; padding: 16px 20px; display: flex; align-items: flex-start; gap: 16px; }
+    .step-num { background: #ff9500; color: white; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; flex-shrink: 0; }
+    .step-body { flex: 1; }
+    .step-title { font-weight: 600; font-size: 14px; margin-bottom: 3px; }
+    .step-desc { font-size: 13px; color: #555; }
+    .footer { text-align: center; font-size: 12px; color: #aaa; padding: 24px; border-top: 1px solid #e0e0e0; }
+    @media (max-width: 640px) { .grid-2, .price-grid { grid-template-columns: 1fr; } .header { padding: 28px 20px 24px; } .container { padding: 28px 16px; } }
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <a href="procedure-judiciaire-recap.html" class="back-link">&larr; Retour au tableau de bord</a>
+  <div class="header-label">Sujet AG 2026 - Eclat de Vert</div>
+  <h1>ZEPLUG : Bornes de recharge VE</h1>
+  <div class="header-sub">Dossier Logivolt / Parking Interieur &nbsp;·&nbsp; Avril 2026</div>
+</div>
+
+<div class="container">
+
+  <section>
+    <h2>En bref</h2>
+    <div class="summary-box">
+      <p><span class="highlight">Zeplug propose d'installer une infrastructure de recharge VE</span> dans le parking interieur, financee par Logivolt (filiale 100% Caisse des Depots). <span class="highlight">Zero cout pour la copropriete.</span> Chaque resident paie individuellement sa borne + abonnement.</p>
+      <p>L'etude ENEDIS intervient apres le vote en AG. Fanny propose d'inviter un representant Zeplug a l'AG et de conditionner la resolution : <span class="highlight">etude ENEDIS concluante et sans cout pour la copropriete.</span></p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Le modele Zeplug vs alternatives</h2>
+    <div class="grid-2">
+      <div class="card" style="border-left:4px solid #ff9500;">
+        <h3>Modele Zeplug / Logivolt (propose)</h3>
+        <p><strong>Investissement copro :</strong> 0 EUR</p>
+        <p><strong>Financement :</strong> Logivolt (Caisse des Depots)</p>
+        <p><strong>Installation :</strong> Zeplug gere tout (admin, technique, maintenance)</p>
+        <p><strong>Compteur :</strong> nouveau compteur ENEDIS dedie, independant des parties communes</p>
+        <p><strong>Bornes :</strong> individuelles, a la demande de chaque copro</p>
+      </div>
+      <div class="card">
+        <h3>Alternatives classiques</h3>
+        <p><strong>Droit a la prise :</strong> branchements limites, impact charges, gestion par syndic</p>
+        <p><strong>Reseau Electrique Auto (ENEDIS) :</strong> participation aux frais infra, chaque resident installe sa borne a ses frais, abonnement + maintenance</p>
+        <p style="margin-top:12px;font-size:12px;color:#888;">Zeplug est l'operateur n1 en France : 25k copros, 2M+ foyers, French Tech Next40.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Tarifs residents (parking interieur, avril 2026)</h2>
+    <div class="price-grid">
+      <div class="price-card">
+        <div class="kw">3,7 kW</div>
+        <div class="real-price">2 199 EUR sans aides</div>
+        <div class="promo-price">599 EUR</div>
+        <div class="note">Aide ADVENIR 1000 EUR + promo 350 EUR + early bird 250 EUR</div>
+        <div class="abo">4,90 EUR/mois (6 mois) puis <strong>14,90 EUR/mois</strong></div>
+      </div>
+      <div class="price-card">
+        <div class="kw">7,4 kW</div>
+        <div class="real-price">2 349 EUR sans aides</div>
+        <div class="promo-price">749 EUR</div>
+        <div class="note">Aide ADVENIR 1000 EUR + promo 350 EUR + early bird 250 EUR</div>
+        <div class="abo">6,90 EUR/mois (6 mois) puis <strong>16,90 EUR/mois</strong></div>
+      </div>
+      <div class="price-card" style="border:2px solid #ff9500;">
+        <div class="kw">11 kW</div>
+        <div class="real-price">2 459 EUR sans aides</div>
+        <div class="promo-price">2 459 EUR</div>
+        <div class="note">Pas d'aide ADVENIR sur cette puissance</div>
+        <div class="abo">16,90 EUR/mois (6 mois) puis <strong>26,90 EUR/mois</strong></div>
+      </div>
+    </div>
+    <div class="card" style="margin-top:16px;">
+      <h3>Electricite au reel</h3>
+      <p><strong>Heures creuses :</strong> 0,16 EUR/kWh &nbsp;|&nbsp; <strong>Heures pleines :</strong> 0,26 EUR/kWh</p>
+      <p>Cout pour 100 km : environ 3 EUR (vs 13 EUR essence, 8 EUR recharge publique)</p>
+      <p style="font-size:12px;color:#888;margin-top:8px;">Prix revisables 2x/an selon indice INSEE. Abonnement sans engagement, resiliable sans frais.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Etapes d'installation</h2>
+    <div class="step-list">
+      <div class="step-item">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <div class="step-title">Vote en AG + signature de 2 conventions</div>
+          <div class="step-desc">Convention operateur (Zeplug) + convention infrastructure (Logivolt). Soumis a validation du CS.</div>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <div class="step-title">Etude ENEDIS + nouveau compteur dedie</div>
+          <div class="step-desc">Compteur independant des parties communes, dedie a la recharge VE. Delai ENEDIS : 6 a 8 mois.</div>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <div class="step-title">Installation armoire de pilotage</div>
+          <div class="step-desc">Armoire connectee 4G pour supervision a distance. Entre Halls C et D.</div>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">4</div>
+        <div class="step-body">
+          <div class="step-title">Bornes individuelles a la demande</div>
+          <div class="step-desc">Chaque copro commande sa borne. Electricien IRVE, certifiee Consuel.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Risques et questions a soulever</h2>
+
+    <div class="risk-card">
+      <div class="risk-level risk-high">Eleve</div>
+      <div class="risk-body">
+        <div class="risk-title">Le prix 599 EUR est tres conditionnel</div>
+        <div class="risk-desc">Depend de l'aide ADVENIR (1 000 EUR), promo bienvenue (350 EUR), et remise early bird (250 EUR). Prix reel sans aides : 2 199 EUR. ADVENIR = "premier arrive, premier servi" jusqu'en 2027.</div>
+        <div class="risk-question"><strong>Question AG :</strong> Quelle garantie contractuelle sur le prix si la copro n'est pas eligible ADVENIR ou si le programme est epuise ?</div>
+      </div>
+    </div>
+
+    <div class="risk-card">
+      <div class="risk-level risk-high">Eleve</div>
+      <div class="risk-body">
+        <div class="risk-title">L'abonnement triple apres 6 mois</div>
+        <div class="risk-desc">3.7kW : 4,90 puis 14,90 EUR/mois (x3). 7.4kW : 6,90 puis 16,90 EUR. 11kW : 16,90 puis 26,90 EUR. Le dossier met en avant le prix d'appel.</div>
+        <div class="risk-question"><strong>Question AG :</strong> Cout total annuel reel pour un resident type (10 000 km/an) apres la periode promo ?</div>
+      </div>
+    </div>
+
+    <div class="risk-card">
+      <div class="risk-level risk-high">Eleve</div>
+      <div class="risk-body">
+        <div class="risk-title">Duree de la convention non mentionnee</div>
+        <div class="risk-desc">10 ans ? 15 ans ? 20 ans ? Que devient l'infrastructure en fin de convention ? La copro la recupere ou elle est demontee ?</div>
+        <div class="risk-question"><strong>Question AG :</strong> Demander copie des conventions avant signature. Quelle duree ? Clause de sortie ? Devenir de l'infra ?</div>
+      </div>
+    </div>
+
+    <div class="risk-card">
+      <div class="risk-level risk-medium">Modere</div>
+      <div class="risk-body">
+        <div class="risk-title">Scenario ENEDIS negatif non detaille</div>
+        <div class="risk-desc">La condition proposee par Fanny est bonne ("etude concluante et sans cout"). Mais le dossier ne precise pas les scenarios de refus ou renforcement reseau.</div>
+        <div class="risk-question"><strong>Question AG :</strong> Que se passe-t-il si ENEDIS demande un renforcement ? Qui paie ?</div>
+      </div>
+    </div>
+
+    <div class="risk-card">
+      <div class="risk-level risk-medium">Modere</div>
+      <div class="risk-body">
+        <div class="risk-title">Normes incendie / ventilation parking interieur</div>
+        <div class="risk-desc">Batteries lithium en parking ferme. Normes evoluent (arrete 13 juillet 2023 IRVE en parc couvert). Non aborde dans le dossier.</div>
+        <div class="risk-question"><strong>Question AG :</strong> Conformite normes incendie ? Responsabilite en cas de sinistre ?</div>
+      </div>
+    </div>
+
+    <div class="risk-card">
+      <div class="risk-level risk-info">Info</div>
+      <div class="risk-body">
+        <div class="risk-title">Borne 11kW : aucune aide</div>
+        <div class="risk-desc">Contrairement aux 3.7 et 7.4kW, la 11kW reste a 2 459 EUR. A signaler aux residents interesses.</div>
+        <div class="risk-question"><strong>A noter :</strong> seules les bornes 3.7kW et 7.4kW beneficient de l'aide ADVENIR.</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Position recommandee du Conseil syndical</h2>
+    <div class="card" style="border-left:4px solid #34c759;">
+      <h3>Favorable sous conditions</h3>
+      <p><strong>Pour la copro :</strong> aucun risque financier direct si la resolution est bien conditionnee.</p>
+      <p><strong>Pour les residents :</strong> cout reel post-promo a bien communiquer (15-27 EUR/mois + electricite). Comparatif reste favorable vs essence/recharge publique.</p>
+      <p style="margin-top:12px;"><strong>Conditions a inscrire dans la resolution :</strong></p>
+      <p>1. Etude ENEDIS concluante et sans aucun cout pour la copropriete</p>
+      <p>2. Communication des conventions au CS avant signature</p>
+      <p>3. Clause de sortie / devenir de l'infrastructure a preciser</p>
+      <p>4. Representant Zeplug invite a l'AG pour repondre aux questions</p>
+    </div>
+  </section>
+
+</div>
+
+<div class="footer">
+  <a href="procedure-judiciaire-recap.html" style="color:#007aff;text-decoration:none;font-weight:600;">&larr; Retour au tableau de bord</a>
+  <br><br>
+  L'Eclat de Vert &nbsp;·&nbsp; 2 rue des Deux Bois, 76130 Mont Saint Aignan &nbsp;·&nbsp; Document interne CS &nbsp;·&nbsp; 10 juin 2026
+</div>
+
+</body>
+</html>
