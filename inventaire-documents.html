@@ -6,7 +6,7 @@
 <title>Inventaire Documents - Procedure Eclat de Vert</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;background:#f5f5f7;color:#1d1d1f;font-size:14px;line-height:1.5}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;background:#f5f5f7;color:#1d1d1f;font-size:13px;line-height:1.5}
 .header{background:#1d1d1f;color:#f5f5f7;padding:32px 48px 24px}
 .header h1{font-size:24px;font-weight:700;margin-bottom:4px}
 .header-sub{font-size:13px;color:#aaa}
@@ -19,17 +19,19 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,san
 .stat-label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:#888;margin-top:4px}
 section{margin-bottom:32px}
 section h2{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#888;margin-bottom:12px;padding-bottom:6px;border-bottom:1px solid #e0e0e0}
-table{width:100%;border-collapse:collapse;background:white;border-radius:10px;overflow:hidden;font-size:13px}
-th{background:#f5f5f7;text-align:left;padding:10px 12px;font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.04em;color:#666}
-td{padding:8px 12px;border-top:1px solid #f0f0f0}
+table{width:100%;border-collapse:collapse;background:white;border-radius:10px;overflow:hidden;font-size:12px}
+th{background:#f5f5f7;text-align:left;padding:8px 10px;font-weight:600;font-size:10px;text-transform:uppercase;letter-spacing:.04em;color:#666}
+td{padding:6px 10px;border-top:1px solid #f0f0f0;vertical-align:top}
 tr:hover td{background:#f8f8fa}
-.lu{color:#34c759;font-weight:700}
-.non-lu{color:#ff9500;font-weight:600}
-.tag{display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px}
+.tag{display:inline-block;font-size:9px;font-weight:700;padding:2px 6px;border-radius:8px;white-space:nowrap}
 .tag-lu{background:#d1fadf;color:#166534}
 .tag-nonlu{background:#fff3cd;color:#92400e}
-.tag-photo{background:#dbeafe;color:#1e40af}
-.tag-msg{background:#f3e8ff;color:#6b21a8}
+.tag-na{background:#f0f0f0;color:#666}
+.cat-header td{background:#f0f4ff;font-weight:700;font-size:12px;color:#007aff;padding:10px;border-top:2px solid #007aff}
+.cat-header.proc2 td{background:#f3e8ff;color:#af52de;border-top-color:#af52de}
+.cat-header.admin td{background:#fff8e6;color:#92400e;border-top-color:#ff9500}
+.cat-header.devis td{background:#e8f5e9;color:#166534;border-top-color:#34c759}
+.cat-header.email td{background:#e8f0fe;color:#1e40af;border-top-color:#5856d6}
 .footer{text-align:center;font-size:12px;color:#aaa;padding:24px;border-top:1px solid #e0e0e0}
 @media(max-width:640px){.stats{grid-template-columns:1fr 1fr}.container{padding:20px 12px}}
 </style>
@@ -37,106 +39,166 @@ tr:hover td{background:#f8f8fa}
 <body>
 <div class="header">
 <h1>Inventaire des documents - Procedure judiciaire</h1>
-<div class="header-sub">Dossier Procedure/Documents + emails - 232 fichiers - Mis a jour le 13 juin 2026</div>
+<div class="header-sub">232 fichiers classes par type - Mis a jour le 22 juin 2026</div>
 </div>
 <div class="container">
 
 <div class="stats">
 <div class="stat-card"><div class="stat-val">232</div><div class="stat-label">Fichiers total</div></div>
-<div class="stat-card"><div class="stat-val green">66</div><div class="stat-label">Lus (sessions 1-3)</div></div>
-<div class="stat-card"><div class="stat-val orange">166</div><div class="stat-label">Non lus</div></div>
-<div class="stat-card"><div class="stat-val">28%</div><div class="stat-label">Couverture</div></div>
+<div class="stat-card"><div class="stat-val green">75+</div><div class="stat-label">Lus</div></div>
+<div class="stat-card"><div class="stat-val orange">~157</div><div class="stat-label">Non lus</div></div>
+<div class="stat-card"><div class="stat-val">32%</div><div class="stat-label">Couverture</div></div>
 </div>
 
 <section>
-<h2>Documents lus - Racine + sous-dossiers</h2>
+<h2>Tous les documents par type</h2>
 <table>
-<tr><th>Fichier</th><th>Statut</th><th>Resume</th></tr>
-<tr><td>DIRE N 6 - 20240529.doc.pdf</td><td><span class="tag tag-lu">LU</span></td><td>Dire n6 du syndicat : chiffrage travaux balcons (152k-232k), demande mise en cause ARCHITHEOS</td></tr>
-<tr><td>PROJET - DIRE N 5 - 20230802.doc-v.pdf</td><td><span class="tag tag-lu">LU</span></td><td>Dire n5 : mission MOE complete confiee a Samy ROPERS, expert va saisir juge pour plans EDELIS</td></tr>
-<tr><td>dire 2 ARCHITHEOS.pdf</td><td><span class="tag tag-lu">LU</span></td><td>Defense ARCHITHEOS (avril 2025) : etancheite balcons pas obligatoire, renvoie vers BET SICRE et peintre</td></tr>
-<tr><td>Dire n 3 EDELIS et pieces.pdf</td><td><span class="tag tag-lu">LU</span></td><td>Defense EDELIS (sept 2023) : courrier a ARCHITHEOS retourne "destinataire inconnu", plaide bonne foi</td></tr>
-<tr><td>SMABTP - dire 3 du 3 juin 2025.pdf</td><td><span class="tag tag-lu">LU</span></td><td>Defense SMABTP : Follet = DET+OPC seulement, peintures rives non prevues, controleur technique sans reserve. Mentionne pre-rapport SERRES 6/8/2024</td></tr>
-<tr><td>Ord du 14.01.2025.pdf</td><td><span class="tag tag-lu">LU</span></td><td>Ordonnance : extension expertise aux MMA (assureur Liorel). Provision 500 euros SMABTP. Delai +2 mois.</td></tr>
-<tr><td>Ordonnance du 20.02.2025.pdf</td><td><span class="tag tag-lu">LU</span></td><td>Ordonnance : extension a ARCHITHEOS/MMA/MAF. Communication pieces assurance ordonnee. Consignation 3000 euros.</td></tr>
-<tr><td>Ord de refere (RG 25-00203).pdf</td><td><span class="tag tag-lu">LU</span></td><td>Ordonnance 1er juillet 2025 : extension expertise aux MMA (assureur DO). Provision 1500 euros. Delai +3 mois.</td></tr>
-<tr><td>Courrier SERRES 20250312 - OPALEXE.pdf</td><td><span class="tag tag-lu">LU</span></td><td>Blandin informe expert : consignation 3000 euros versee (suite ord. 20/02/2025)</td></tr>
-<tr><td>Courrier SERRES 20250418 - OPALEXE.pdf</td><td><span class="tag tag-lu">LU</span></td><td>Blandin informe expert : audience 10/04 renvoyee au 22 mai 2025 (extension MMA DO)</td></tr>
-<tr><td>PROJET Courrier SERRES 20250331 - OPALEXE.pdf</td><td><span class="tag tag-lu">LU</span></td><td>Suite reunion 26/03 : expert veut visiter balcons, Blandin demande precision sur quels balcons</td></tr>
-<tr><td>Courrier SERRES 20250603 - OPALEXE.pdf</td><td><span class="tag tag-lu">LU</span></td><td>Blandin informe expert : audience 22/05, delibere au 1er juillet (extension MMA DO)</td></tr>
-<tr><td>Courrier SERRES 20250716 - OPALEXE.pdf</td><td><span class="tag tag-lu">LU</span></td><td>Blandin informe expert : ordonnance 1er juillet rendue, extension aux MMA DO faite</td></tr>
-<tr><td>Courrier CENTURY 21 HARMONY - 20250716.pdf</td><td><span class="tag tag-lu">LU</span></td><td>Blandin a C21 : provision 1500 euros a payer avant 10/08. Si non paye, expert depose en l'etat. Signification obligatoire sous 6 mois.</td></tr>
-<tr><td>Courrier CENTURY 21 HARMONY - 20250723doc.pdf</td><td><span class="tag tag-lu">LU</span></td><td>Blandin a C21 : avis de provision complementaire 1500 euros recu de la Regie</td></tr>
-<tr><td>Courrier CENTURY 21 HARMONY - 20250801.pdf</td><td><span class="tag tag-lu">LU</span></td><td>Blandin a C21 : infiltrations parking signalees par M. BRUNEL (locataire). Font partie mission SERRES. Demande verification.</td></tr>
-<tr><td>Courrier CENTURY 21 HARMONY - 20250818.pdf</td><td><span class="tag tag-lu">LU</span></td><td>Blandin a C21 : signification ordonnance 1er juillet aux MMA par huissier SCP BOIVIN. Facture a regler.</td></tr>
-<tr><td>Courrier CENTURY 21 HARMONY - 20250626.pdf</td><td><span class="tag tag-lu">LU</span></td><td>Blandin a C21 proc. 2 : suite audience 26/06, delibere au 19/08/2025. Joint facture honoraires.</td></tr>
-<tr><td>Fissuration A21-A22_Note technique constructeur T2C.pdf</td><td><span class="tag tag-lu">LU</span></td><td>Note technique T2C a l'expert (suite reunion 19/12/2025). Mode constructif voiles banches, analyse fissuration.</td></tr>
-<tr><td>CONVOCATION EXPERTISE JUDICIAIRE 10 JUIN 2026.pdf</td><td><span class="tag tag-lu">LU</span></td><td>Convocation par SERRES : expertise proc. 2 le 10/06/2026 a 10h. Liste complete des parties convoquees.</td></tr>
-<tr><td>PROCEDURE suite desordres A22/Ordonnance 19.08.2025.PDF</td><td><span class="tag tag-lu">LU</span></td><td>Ordonnance proc. 2 : expertise fissures A22 ordonnee. Expert SERRES. Consignation 6000. Forclusion EDELIS rejetee.</td></tr>
-<tr><td>PROCEDURE suite desordres A22/Rapport SARETEC.pdf</td><td><span class="tag tag-lu">LU</span></td><td>Rapport preliminaire DO SARETEC (16/06/2022). Fissuration structurelle A21-A22. Ferroscan : ferraillage insuffisant.</td></tr>
-<tr><td>PROCEDURE suite desordres A22/Conclusions en reponse 1.pdf</td><td><span class="tag tag-lu">LU</span></td><td>Conclusions du syndicat (20/05/2025) proc. 2. Historique complet fissures, FREYSSINET, 11 parties, chiffrage.</td></tr>
-<tr><td>PROCEDURE suite desordres A22/conclusions FOLLET et SMABTP(1) (1).pdf</td><td><span class="tag tag-lu">LU</span></td><td>Defense FOLLET/SMABTP proc. 2 : mission DET+AOR seulement. Communication attestations SMABTP 2012+2025.</td></tr>
-<tr><td>PROCEDURE suite desordres A22/2025.04.09 - Conclusions - EDELIS (1).pdf</td><td><span class="tag tag-lu">LU</span></td><td>Defense EDELIS proc. 2 : plaide forclusion (reception 9/03/2015, +10 ans). Demande modification perimetre expert.</td></tr>
-<tr><td>PROCEDURE suite desordres A22/Courrier CENTURY 21 HARMONY - 20250828.pdf</td><td><span class="tag tag-lu">LU</span></td><td>Blandin a C21 proc. 2 : consignation 6000 a payer avant 25/10. Signification ordonnance demandee. QUALICONSULT a communique (AXA).</td></tr>
-<tr><td>PROCEDURE suite desordres A22/Courrier CENTURY 21 HARMONY - 20250924.pdf</td><td><span class="tag tag-lu">LU</span></td><td>Blandin a C21 proc. 2 : confirme paiement provision 6000. Joint justificatif + courrier a l'expert.</td></tr>
-<tr><td>PROCEDURE suite desordres A22/Courrier SERRES - 20250924.pdf</td><td><span class="tag tag-lu">LU</span></td><td>Blandin a SERRES proc. 2 : informe du paiement provision. Transmet pieces via lien CNB.</td></tr>
-</table>
-</section>
+<tr><th style="width:45%">Document</th><th style="width:8%">Statut</th><th>Resume / Contenu</th></tr>
 
-<section>
-<h2>Documents lus - Session 2 (suite) + Session 3</h2>
-<table>
-<tr><th>Fichier</th><th>Statut</th><th>Resume</th></tr>
-<tr><td>NOTE DE SYNTHESE N1... PRE-RAPPORT- V2.pdf</td><td><span class="tag tag-lu">LU</span></td><td>PRE-RAPPORT SERRES 6/8/2024 (39p). Document cle. Imputabilites : ARCHITHEOS 20%, LIOREL/FOLLET 60%, LB Etancheite 20%. Cout : 152 878 euros. 7 griefs analyses.</td></tr>
-<tr><td>PROCEDURE suite desordres A22/CONCLUSIONS EN DEF REFERE ARCHITHEOS (1).pdf</td><td><span class="tag tag-lu">LU</span></td><td>Defense ARCHITHEOS proc. 2 (10/04/2025). Demande extension proc. 1 au lieu de nouvelle expertise. Sous-traite CCTP a Lucien HECKMANN.</td></tr>
-<tr><td>PROCEDURE suite desordres A22/CONCLUSIONS EN DEFENSE 2 ARCHITHEOS.pdf</td><td><span class="tag tag-lu">LU</span></td><td>Defense ARCHITHEOS proc. 2 (22/05/2025). Identique au precedent. Demande communication contrats sous astreinte au syndicat.</td></tr>
-<tr><td>PROCEDURE suite desordres A22/Conclusions PR QUALICONSULT (1).pdf</td><td><span class="tag tag-lu">LU</span></td><td>Defense QUALICONSULT proc. 2. S'en rapporte a justice. Communique contrat RCD 14/01/2010. Position attentiste.</td></tr>
-<tr><td>PROCEDURE suite desordres A22/EDELIS - 2025.05.20 conclusions n2 TRAJ.pdf</td><td><span class="tag tag-lu">LU</span></td><td>Conclusions EDELIS n2 proc. 2. Maintient forclusion. DOE remis. Dates confirmees (reception 9/3/2015).</td></tr>
-<tr><td>Courriel Blandin 09 10 24/Dire LIOREL n3.pdf</td><td><span class="tag tag-lu">LU</span></td><td>Dire LIOREL n3 (16/09/2024). ARCHITHEOS preponderant. Plans 1/25e. FOLLET arrive apres demarrage. Joint RFCT QUALICONSULT. Demande revision des %.</td></tr>
-<tr><td>Courriel Blandin 09 10 24/Dire FOLLET n1.pdf (via SMABTP)</td><td><span class="tag tag-lu">LU</span></td><td>Dire FOLLET/SMABTP n1 (16/09/2024). Diffuse reponse FOLLET du 7/9/2024. Joint factures, RFCT, PV reunions chantier. Mission MDT=ARCHITHEOS, VISA=FOLLET.</td></tr>
-<tr><td colspan="3" style="font-weight:700;padding-top:12px;border-top:2px solid #e0e0e0;">Session 3 : Emails (.eml) - 31 fichiers lus</td></tr>
-<tr><td>31 emails (procedure Eclat de vert, assignation, URGENT, dire n6)</td><td><span class="tag tag-lu">LU</span></td><td>Principalement des transmissions de PJ par Amandine (C21). Decision unanime CS mise en cause ARCHITHEOS (sept 2024). Remarque Pinsard sur facades (mai 2024). Declaration DO balcons (oct 2024).</td></tr>
-</table>
-</section>
+<!-- RAPPORTS D'EXPERTISE -->
+<tr class="cat-header"><td colspan="3">Rapports d'expertise et pre-rapports (3)</td></tr>
+<tr><td>NOTE DE SYNTHESE N1... PRE-RAPPORT- V2.pdf</td><td><span class="tag tag-lu">LU</span></td><td>Pre-rapport n1 SERRES 6/8/2024. Imputabilites : ARCHITHEOS 20%, LIOREL+FOLLET 60%, LB Etancheite 20%. Cout : 152 878 euros. 7 griefs.</td></tr>
+<tr><td>Note de synthese n2 valant pre-rapport.pdf (NOUVEAU)</td><td><span class="tag tag-lu">LU</span></td><td>Pre-rapport n2 SERRES 16/6/2026 (58p). Imputabilites revisees : ARCHITHEOS 20%, LIOREL 25%, FOLLET 25%, LB Etancheite 15%, AKERYS 15%. Rapport final 21/08/2026.</td></tr>
+<tr><td>Note sapiteur - Fissures refends 12.06.2026.pdf (NOUVEAU)</td><td><span class="tag tag-lu">LU</span></td><td>Rapport sapiteur Emmanuel DAVID (Structure et Beton). Cause fissures A22 = dilatation thermique dalle toiture-terrasse. Pas de risque structurel. Solution : mastic + doublage isolant.</td></tr>
+<tr><td>PROCEDURE suite desordres A22/Rapport SARETEC.pdf</td><td><span class="tag tag-lu">LU</span></td><td>Rapport preliminaire DO SARETEC (16/06/2022). Ferroscan : ferraillage insuffisant 1.25 kg/m2 vs 7 kg requis.</td></tr>
 
-<section>
-<h2>Documents NON lus - Par categorie estimee (d'apres le titre)</h2>
-<table>
-<tr><th>Categorie</th><th>Nombre</th><th>Exemples</th><th>Priorite</th></tr>
-<tr><td>Pieces SMABTP (dires proc.1, n10 a 37)</td><td>28</td><td>npiece 10 D3.pdf a npiece 37 D3.pdf</td><td>Basse (pieces justificatives de la SMABTP)</td></tr>
-<tr><td>Dossier SAMY ROPERS (devis, plans, refs)</td><td>11</td><td>DPGF, recap devis, plaquette, assurance RCD...</td><td>Moyenne (detail des devis travaux)</td></tr>
-<tr><td>Assignations (actes, factures huissiers)</td><td>~20</td><td>Second original ARCHITHEOS/MAF/MMA, factures huissiers</td><td>Basse (actes de procedure)</td></tr>
-<tr><td>Pieces proc. 2 A22 (assurance, conditions)</td><td>~20</td><td>MMA conditions generales/particulieres 2012, QUALICONSULT contrat RCD, SMA BTP conditions 2025</td><td>Basse (polices d'assurance)</td></tr>
-<tr><td>Courriers C21 non lus (2023-2024)</td><td>~15</td><td>20230802, 20230809, 20230912, 20230925, 20231004, 20240226, 20240319, 20240529...</td><td>Moyenne (echanges avocat-syndic anterieurs)</td></tr>
-<tr><td>Actes delivrance assignation proc.2 (mars 2025)</td><td>~16</td><td>Expedition ARCHITHEOS/BET SICRE/EDELIS/FOLLET/LIOREL/MAF/MMA/QUALICONSULT/SMABTP/T2C, factures huissiers</td><td>Basse (actes de procedure)</td></tr>
-<tr><td>Factures avocat DPR</td><td>~6</td><td>FACTURE 102705, 103049, 103088, 103266, 103562, 103767</td><td>Basse (montants deja connus via RGD)</td></tr>
-<tr><td>Courriel Blandin 09/10/24 (pieces Follet/Liorel)</td><td>~10</td><td>Piece FOLLET 1-8, Piece LIOREL 9, Dire LIOREL 3, Dire FOLLET 1</td><td>Haute (dires adverses non lus)</td></tr>
-<tr><td>Devis/preconisations (sous-dossier Devis)</td><td>6</td><td>Devis NICOLETTA, RAVET, SEINETANCH, preconisation C21...</td><td>Moyenne (detail des offres entreprises)</td></tr>
-<tr><td>Documents divers (photos, scans, ordonnances deja vues)</td><td>~20</td><td>Photos fissures A22, cheque taxe fonciere, MI 21-094, SKM scans, justif depot regie...</td><td>Basse</td></tr>
-<tr><td>NOTE DE SYNTHESE N1 PRE-RAPPORT V2.pdf</td><td>1</td><td>Potentiellement le pre-rapport SERRES du 6/8/2024</td><td style="color:#ff3b30;font-weight:700">CRITIQUE</td></tr>
-<tr><td>Conclusions ARCHITHEOS proc.2 (2 docs)</td><td>2</td><td>CONCLUSIONS EN DEF REFERE ARCHITHEOS, CONCLUSIONS EN DEFENSE 2 ARCHITHEOS</td><td>Haute (defense adversaire)</td></tr>
-<tr><td>Conclusions QUALICONSULT proc.2</td><td>1</td><td>Conclusions PR QUALICONSULT (1).pdf</td><td>Haute (position controleur technique)</td></tr>
-<tr><td>EDELIS conclusions n2 proc.2</td><td>1</td><td>EDELIS - 2025.05.20 ...usions n2- TRAJ.pdf</td><td>Haute (2eme jeu conclusions EDELIS)</td></tr>
-<tr><td>Courrier expert LANDIN 05-09-23</td><td>1</td><td>Courrier de l'expert LANDIN du 05-09-23.pdf</td><td>Moyenne (qui est LANDIN ?)</td></tr>
-<tr><td>Messages .msg (Outlook)</td><td>3</td><td>20200822 MMA-T2C, Retour analyse T2C, TJ ROUEN affaire SDC</td><td>Moyenne (non lisibles en PDF)</td></tr>
-</table>
-</section>
+<!-- ORDONNANCES -->
+<tr class="cat-header"><td colspan="3">Ordonnances du tribunal (7)</td></tr>
+<tr><td>2021/ORDONNANCE DE REFERE ECLAT DE VERT.pdf</td><td><span class="tag tag-nonlu">NON LU</span></td><td>Ordonnance initiale 2 fevrier 2021 (designation expert SERRES)</td></tr>
+<tr><td>Ord du 14.01.2025.pdf</td><td><span class="tag tag-lu">LU</span></td><td>Extension expertise aux MMA (assureur Liorel). Provision 500 euros.</td></tr>
+<tr><td>Ordonnance du 20.02.2025.pdf</td><td><span class="tag tag-lu">LU</span></td><td>Extension ARCHITHEOS/MMA/MAF. Consignation 3000 euros.</td></tr>
+<tr><td>Ord de refere (RG 25-00203).pdf</td><td><span class="tag tag-lu">LU</span></td><td>1er juillet 2025 : extension MMA DO. Provision 1500 euros.</td></tr>
+<tr><td>PROCEDURE suite desordres A22/Ordonnance 19.08.2025.PDF</td><td><span class="tag tag-lu">LU</span></td><td>Expertise fissures A22 ordonnee. Consignation 6000 euros. Forclusion EDELIS rejetee.</td></tr>
+<tr><td>Ordonnance provision complementaires 13.03.2026.pdf</td><td><span class="tag tag-lu">LU</span></td><td>Provision 3500 euros. Prorogation rapport au 31/10/2026.</td></tr>
+<tr><td>Courriel Blandin 09 10 24/Ordonnance complem...rov et delai.pdf</td><td><span class="tag tag-nonlu">NON LU</span></td><td>Ordonnance complementaire (provision + delai)</td></tr>
 
-<section>
-<h2>Documents critiques et haute priorite - TOUS LUS</h2>
-<table>
-<tr><th>Fichier</th><th>Statut</th></tr>
-<tr style="background:#d1fadf"><td><strong>NOTE DE SYNTHESE N1... PRE-RAPPORT- V2.pdf</strong></td><td><span class="tag tag-lu">LU</span> - Pre-rapport SERRES 6/8/2024. Imputabilites + chiffrage 152 878 euros.</td></tr>
-<tr style="background:#d1fadf"><td>CONCLUSIONS EN DEF REFERE ARCHITHEOS (1).pdf</td><td><span class="tag tag-lu">LU</span></td></tr>
-<tr style="background:#d1fadf"><td>CONCLUSIONS EN DEFENSE 2 ARCHITHEOS.pdf</td><td><span class="tag tag-lu">LU</span></td></tr>
-<tr style="background:#d1fadf"><td>Conclusions PR QUALICONSULT (1).pdf</td><td><span class="tag tag-lu">LU</span></td></tr>
-<tr style="background:#d1fadf"><td>EDELIS - 2025.05.20 conclusions n2 TRAJ.pdf</td><td><span class="tag tag-lu">LU</span></td></tr>
-<tr style="background:#d1fadf"><td>Dire LIOREL n3.pdf</td><td><span class="tag tag-lu">LU</span></td></tr>
-<tr style="background:#d1fadf"><td>Dire FOLLET n1.pdf</td><td><span class="tag tag-lu">LU</span></td></tr>
+<!-- DIRES DU SYNDICAT -->
+<tr class="cat-header"><td colspan="3">Dires du syndicat (4)</td></tr>
+<tr><td>DIRE N 6 - 20240529.doc.pdf</td><td><span class="tag tag-lu">LU</span></td><td>Chiffrage travaux balcons (152k-232k), demande mise en cause ARCHITHEOS</td></tr>
+<tr><td>PROJET - DIRE N 6 - 20240529.doc.pdf</td><td><span class="tag tag-nonlu">NON LU</span></td><td>Projet du dire n6 (version draft)</td></tr>
+<tr><td>PROJET - DIRE N 5 - 20230802.doc-v.pdf</td><td><span class="tag tag-lu">LU</span></td><td>Mission MOE complete confiee a Samy ROPERS</td></tr>
+<tr><td>2023.09.15 - Dire n2 - EDELIS.pdf</td><td><span class="tag tag-lu">LU</span></td><td>Dire n2 EDELIS : courrier a ARCHITHEOS retourne "destinataire inconnu"</td></tr>
+
+<!-- DIRES DES PARTIES ADVERSES -->
+<tr class="cat-header"><td colspan="3">Dires et conclusions des parties adverses (12)</td></tr>
+<tr><td>dire 2 ARCHITHEOS.pdf</td><td><span class="tag tag-lu">LU</span></td><td>Defense ARCHITHEOS proc. 1 : etancheite pas obligatoire, renvoie vers BET SICRE</td></tr>
+<tr><td>Dire n 3 EDELIS et pieces.pdf</td><td><span class="tag tag-lu">LU</span></td><td>Defense EDELIS proc. 1 : plaide bonne foi, plans introuvables</td></tr>
+<tr><td>SMABTP - dire 3 du 3 juin 2025.pdf</td><td><span class="tag tag-lu">LU</span></td><td>Defense SMABTP proc. 1 : Follet = DET+OPC, peintures rives non prevues. Mentionne pre-rapport.</td></tr>
+<tr><td>Courriel Blandin 09 10 24/Dire LIOREL n3.pdf</td><td><span class="tag tag-lu">LU</span></td><td>ARCHITHEOS preponderant selon LIOREL. Plans 1/25e. Joint RFCT QUALICONSULT.</td></tr>
+<tr><td>Courriel Blandin 09 10 24/Dire FOLLET n1.pdf</td><td><span class="tag tag-lu">LU</span></td><td>Diffuse reponse FOLLET 7/9/2024. Joint factures, RFCT, PV reunions chantier.</td></tr>
+<tr><td>PROCEDURE suite desordres A22/CONCLUSIONS EN DEF REFERE ARCHITHEOS (1).pdf</td><td><span class="tag tag-lu">LU</span></td><td>Defense ARCHITHEOS proc. 2 : demande extension proc. 1. Sous-traite CCTP a HECKMANN.</td></tr>
+<tr><td>PROCEDURE suite desordres A22/CONCLUSIONS EN DEFENSE 2 ARCHITHEOS.pdf</td><td><span class="tag tag-lu">LU</span></td><td>Defense ARCHITHEOS proc. 2 (audience 22/05). Memes demandes.</td></tr>
+<tr><td>PROCEDURE suite desordres A22/conclusions FOLLET et SMABTP(1) (1).pdf</td><td><span class="tag tag-lu">LU</span></td><td>Defense FOLLET/SMABTP proc. 2 : mission DET+AOR seulement.</td></tr>
+<tr><td>PROCEDURE suite desordres A22/2025.04.09 - Conclusions - EDELIS (1).pdf</td><td><span class="tag tag-lu">LU</span></td><td>Defense EDELIS proc. 2 : plaide forclusion (10 ans depasses).</td></tr>
+<tr><td>PROCEDURE suite desordres A22/EDELIS - 2025.05.20 conclusions n2 TRAJ.pdf</td><td><span class="tag tag-lu">LU</span></td><td>Conclusions EDELIS n2 proc. 2. Maintient forclusion.</td></tr>
+<tr><td>PROCEDURE suite desordres A22/Conclusions PR QUALICONSULT (1).pdf</td><td><span class="tag tag-lu">LU</span></td><td>S'en rapporte a justice. Contrat RCD 14/01/2010.</td></tr>
+<tr><td>PROCEDURE suite desordres A22/Conclusions en reponse 1.pdf</td><td><span class="tag tag-lu">LU</span></td><td>Conclusions du syndicat proc. 2 (20/05/2025). Historique complet fissures.</td></tr>
+
+<!-- COURRIERS AVOCAT A EXPERT -->
+<tr class="cat-header"><td colspan="3">Courriers avocat a l'expert SERRES (6)</td></tr>
+<tr><td>Courrier SERRES 20250312 - OPALEXE.pdf</td><td><span class="tag tag-lu">LU</span></td><td>Consignation 3000 euros versee</td></tr>
+<tr><td>Courrier SERRES 20250418 - OPALEXE.pdf</td><td><span class="tag tag-lu">LU</span></td><td>Audience 10/04 renvoyee au 22 mai</td></tr>
+<tr><td>PROJET Courrier SERRES 20250331 - OPALEXE.pdf</td><td><span class="tag tag-lu">LU</span></td><td>Expert veut visiter balcons, demande precision</td></tr>
+<tr><td>Courrier SERRES 20250603 - OPALEXE.pdf</td><td><span class="tag tag-lu">LU</span></td><td>Audience 22/05, delibere 1er juillet</td></tr>
+<tr><td>Courrier SERRES 20250716 - OPALEXE.pdf</td><td><span class="tag tag-lu">LU</span></td><td>Ordonnance 1er juillet rendue</td></tr>
+<tr><td>PROCEDURE suite desordres A22/Courrier SERRES - 20250924.pdf</td><td><span class="tag tag-lu">LU</span></td><td>Paiement provision proc. 2 confirme</td></tr>
+
+<!-- COURRIERS AVOCAT AU SYNDIC -->
+<tr class="cat-header"><td colspan="3">Courriers avocat au syndic Century 21 (25+)</td></tr>
+<tr><td>Courrier C21 - 20250716.pdf</td><td><span class="tag tag-lu">LU</span></td><td>Provision 1500 euros, signification obligatoire sous 6 mois</td></tr>
+<tr><td>Courrier C21 - 20250723doc.pdf</td><td><span class="tag tag-lu">LU</span></td><td>Avis provision complementaire 1500 euros</td></tr>
+<tr><td>Courrier C21 - 20250801.pdf</td><td><span class="tag tag-lu">LU</span></td><td>Infiltrations parking M. BRUNEL. Font partie mission SERRES.</td></tr>
+<tr><td>Courrier C21 - 20250818.pdf</td><td><span class="tag tag-lu">LU</span></td><td>Signification ordonnance 1/07 aux MMA par huissier</td></tr>
+<tr><td>Courrier C21 - 20250626.pdf</td><td><span class="tag tag-lu">LU</span></td><td>Audience 26/06, delibere 19/08 (proc. 2)</td></tr>
+<tr><td>Courrier C21 - 20250828.pdf (proc. 2)</td><td><span class="tag tag-lu">LU</span></td><td>Consignation 6000 euros proc. 2</td></tr>
+<tr><td>Courrier C21 - 20250924.pdf (proc. 2)</td><td><span class="tag tag-lu">LU</span></td><td>Paiement provision 6000 confirme</td></tr>
+<tr><td>Courrier C21 - 20250331.pdf</td><td><span class="tag tag-lu">LU</span></td><td>Suite reunion 26/03, visite balcons</td></tr>
+<tr><td>Courrier C21 - 20250227.pdf</td><td><span class="tag tag-lu">LU</span></td><td>Consignation 3000 euros, ordonnance 20/02</td></tr>
+<tr><td>Courrier C21 - 20250417.pdf</td><td><span class="tag tag-lu">LU</span></td><td>Audience 10/04 renvoyee, joint dire ARCHITHEOS n2</td></tr>
+<tr><td>Courrier C21 - 20250318 (remboursement).pdf</td><td><span class="tag tag-lu">LU</span></td><td>Remboursement 114,74 euros (erreur virement huissier)</td></tr>
+<tr><td>Courrier C21 - 20240807.pdf</td><td><span class="tag tag-lu">LU</span></td><td>Transmission pre-rapport n1, declaration DO balcons a faire</td></tr>
+<tr><td>Courrier C21 - 20240529.pdf</td><td><span class="tag tag-lu">LU</span></td><td>Projet dire n6 soumis au CS pour validation</td></tr>
+<tr><td>Courrier C21 - 20240319.pdf</td><td><span class="tag tag-lu">LU</span></td><td>Cheque 1800 euros, expert attend etude SAMY ROPERS</td></tr>
+<tr><td>Courrier C21 - 20230925.pdf</td><td><span class="tag tag-lu">LU</span></td><td>Dire n2 EDELIS, attente position expert sur ARCHITHEOS</td></tr>
+<tr><td>Courrier a Mme BLONDEL - transmission pre-rapport.pdf (NOUVEAU)</td><td><span class="tag tag-lu">LU</span></td><td>Blandin 18/06/2026 : pre-rapport n2 "tres satisfaisant". Rapport final 21/08. Delai dires 16/07.</td></tr>
+<tr><td>Courrier a Mme BLONDEL - transmission rapport sapiteur.pdf (NOUVEAU)</td><td><span class="tag tag-lu">LU</span></td><td>Blandin 15/06/2026 : rapport sapiteur DAVID. Fissures = dilatation, pas de renforcement. Transmettre a FREYSSINET.</td></tr>
+<tr><td>Courrier C21 - 20230802, 20230809, 20230912, 20231004, 20240111, 20240226, 20240529-2</td><td><span class="tag tag-nonlu">NON LU</span></td><td>Courriers anterieurs (echanges avocat-syndic 2023-2024, ~8 fichiers)</td></tr>
+<tr><td>Courrier C21 (rappel, .doc, ord 14.01.2025, etc.)</td><td><span class="tag tag-nonlu">NON LU</span></td><td>Courriers divers non dates ou duplicats (~5 fichiers)</td></tr>
+
+<!-- DEVIS ET ETUDES TECHNIQUES -->
+<tr class="cat-header devis"><td colspan="3">Devis et etudes techniques (18)</td></tr>
+<tr><td>Devis Mme Samy Ropers.pdf</td><td><span class="tag tag-lu">LU</span></td><td>Proposition honoraires MOE 12/07/2023. Phase 1 : 7800 euros. Phase 4 : 7.2% travaux. Signe 6/10/2023.</td></tr>
+<tr><td>Fissuration A21-A22_Note technique constructeur T2C.pdf</td><td><span class="tag tag-lu">LU</span></td><td>Note T2C suite reunion 19/12/2025. Mode constructif voiles banches.</td></tr>
+<tr><td>PROJET Courrier SARETEC - 20241009.doc.pdf</td><td><span class="tag tag-lu">LU</span></td><td>Blandin informe SARETEC du pre-rapport n1</td></tr>
+<tr><td>Dossier SAMY ROPERS/ (11 fichiers)</td><td><span class="tag tag-nonlu">NON LU</span></td><td>DPGF, recap devis, plaquette commerciale, assurance RCD, references chantiers...</td></tr>
+<tr><td>Devis Eclat de Vert Procedure/ (6 fichiers)</td><td><span class="tag tag-nonlu">NON LU</span></td><td>Devis NICOLETTA, RAVET, SEINETANCH, preconisation C21, SKM scan...</td></tr>
+
+<!-- ASSIGNATIONS ET ACTES -->
+<tr class="cat-header admin"><td colspan="3">Assignations, expeditions et actes de procedure (~36)</td></tr>
+<tr><td>ASSIGNATION/ (21 fichiers)</td><td><span class="tag tag-nonlu">NON LU</span></td><td>Second original ARCHITHEOS/MAF/MMA, assignation SMABTP, assignation MMA DO, conclusions MMA EDELIS, factures huissiers (BOIVIN, LEROI, LAINE)</td></tr>
+<tr><td>acte de delivrance assignation mail du 05 03 25/ (15 fichiers)</td><td><span class="tag tag-nonlu">NON LU</span></td><td>Expeditions proc. 2 : ARCHITHEOS, BET SICRE, EDELIS, FOLLET, LIOREL, MAF, MMA, QUALICONSULT, SMABTP, T2C + factures huissiers + conclusions EDELIS/T2C</td></tr>
+<tr><td>Assignation refer MMA (DO)_V2.pdf, expedition MMA DO.pdf, expe (1).pdf</td><td><span class="tag tag-nonlu">NON LU</span></td><td>Actes de procedure (assignation MMA DO)</td></tr>
+
+<!-- PIECES SMABTP -->
+<tr class="cat-header"><td colspan="3">Pieces justificatives SMABTP proc. 1 (28)</td></tr>
+<tr><td>ECLAT DE VERT - Pieces SMABTP 10 a 37/ (28 fichiers)</td><td><span class="tag tag-nonlu">NON LU</span></td><td>npiece 10 D3 a npiece 37 D3 : pieces versees par SMABTP a l'appui de son dire n3 (factures Follet, PV reunions chantier 2013-2015, CCTP lots)</td></tr>
+
+<!-- PIECES PROC 2 -->
+<tr class="cat-header proc2"><td colspan="3">Pieces proc. 2 fissures A22 (~25)</td></tr>
+<tr><td>PROCEDURE suite desordres A22/Courrier C21 - 2025031, 20250417, 20250516, 20250605</td><td><span class="tag tag-nonlu">NON LU</span></td><td>Courriers avocat proc. 2 (4 fichiers)</td></tr>
+<tr><td>PROCEDURE suite desordres A22/Courrier SARETEC - 20250417.pdf</td><td><span class="tag tag-nonlu">NON LU</span></td><td>Courrier expert SARETEC proc. 2</td></tr>
+<tr><td>PROCEDURE suite desordres A22/MMA Assurance 2012 (2 fichiers)</td><td><span class="tag tag-nonlu">NON LU</span></td><td>Conditions generales + particulieres contrat MMA 2012</td></tr>
+<tr><td>PROCEDURE suite desordres A22/SMA BTP Conditions 2025 (2 fichiers)</td><td><span class="tag tag-nonlu">NON LU</span></td><td>Conditions generales + particulieres SMABTP 2025</td></tr>
+<tr><td>PROCEDURE suite desordres A22/QUALICONSULT contrat RCD (2 fichiers)</td><td><span class="tag tag-nonlu">NON LU</span></td><td>Conditions generales + particulieres contrat RCD QUALICONSULT</td></tr>
+<tr><td>PROCEDURE suite desordres A22/1- et 2- CONTRAT RCD (2 fichiers)</td><td><span class="tag tag-nonlu">NON LU</span></td><td>Autre version du contrat RCD</td></tr>
+<tr><td>PROCEDURE suite desordres A22/NOS PIECES 1 A 4, PIECE 1-3, piece 5-6</td><td><span class="tag tag-nonlu">NON LU</span></td><td>Pieces de parties adverses proc. 2 (~8 fichiers)</td></tr>
+<tr><td>PROCEDURE suite desordres A22/npiece 1-4 REF</td><td><span class="tag tag-nonlu">NON LU</span></td><td>Pieces de refere proc. 2 (4 fichiers)</td></tr>
+<tr><td>PROCEDURE suite desordres A22/Avis reglement provision, Cheque 6000, REGIE, Fiche LE MOUELLIC, Mail QUALICONSULT</td><td><span class="tag tag-nonlu">NON LU</span></td><td>Documents administratifs proc. 2 (~5 fichiers)</td></tr>
+
+<!-- PIECES MMA/LIOREL -->
+<tr class="cat-header"><td colspan="3">Pieces MMA / LIOREL (4)</td></tr>
+<tr><td>PIECE 1 MMA (LIOREL).pdf</td><td><span class="tag tag-nonlu">NON LU</span></td><td>Piece n1 produite par MMA pour Liorel</td></tr>
+<tr><td>PIECES 2 a 7 - MMA (LIOREL).pdf</td><td><span class="tag tag-nonlu">NON LU</span></td><td>Pieces n2 a 7 produites par MMA pour Liorel</td></tr>
+<tr><td>Bordereau de pieces MMA (LIOREL).pdf</td><td><span class="tag tag-nonlu">NON LU</span></td><td>Liste des pieces MMA/Liorel</td></tr>
+<tr><td>Courriel Blandin 09 10 24/Piece FOLLET n1 a n8 + Piece LIOREL n9 (9 fichiers)</td><td><span class="tag tag-nonlu">NON LU</span></td><td>Pieces versees par Follet et Liorel (factures, PV, attestation QUALICONSULT)</td></tr>
+
+<!-- FACTURES AVOCAT -->
+<tr class="cat-header admin"><td colspan="3">Factures avocat et frais de justice (10)</td></tr>
+<tr><td>FACTURE N 102705, 103049, 103088, 103266, 103562, 103767</td><td><span class="tag tag-nonlu">NON LU</span></td><td>Factures cabinet DPR/1556 Avocats (6 fichiers). Montants deja connus via RGD.</td></tr>
+<tr><td>FACT (2).pdf, REGIE TRIB JUDICIAIRE ROUEN.pdf, AR REGIE.pdf, Justif depot Regie.pdf</td><td><span class="tag tag-nonlu">NON LU</span></td><td>Justificatifs de paiement des consignations (4 fichiers)</td></tr>
+
+<!-- DOCUMENTS ANCIENS 2021 -->
+<tr class="cat-header"><td colspan="3">Documents 2021 (3)</td></tr>
+<tr><td>2021/NOTE AUX PARTIES N1.pdf</td><td><span class="tag tag-nonlu">NON LU</span></td><td>Premiere note aux parties de l'expert (2021)</td></tr>
+<tr><td>2021/expertise judiciaire.pdf</td><td><span class="tag tag-nonlu">NON LU</span></td><td>Document expertise judiciaire initiale</td></tr>
+<tr><td>2021/ORDONNANCE DE REFERE ECLAT DE VERT.pdf</td><td><span class="tag tag-nonlu">NON LU</span></td><td>Ordonnance initiale 2 fevrier 2021</td></tr>
+
+<!-- CONVOCATIONS ET DIVERS -->
+<tr class="cat-header"><td colspan="3">Convocations, photos, scans et divers (15+)</td></tr>
+<tr><td>CONVOCATION EXPERTISE JUDICIAIRE 10 JUIN 2026.pdf</td><td><span class="tag tag-lu">LU</span></td><td>Convocation SERRES : expertise 10/06/2026 a 10h. Liste parties.</td></tr>
+<tr><td>2026.06.10 PHOTOS FISSURES APPT 21 ET 22/ (4 fichiers jpeg)</td><td><span class="tag tag-nonlu">NON LU</span></td><td>Photos des fissures A21 et A22 (chambre, sejour)</td></tr>
+<tr><td>Piece 2 et plans.pdf, CNA.pdf, Mail expert 13.09.2023.pdf, Mail exp 26.03.2025.pdf</td><td><span class="tag tag-nonlu">NON LU</span></td><td>Plans, certificat de non-appel, emails expert</td></tr>
+<tr><td>SKM_C360i25032409011.pdf, SKM_C451i26012912161.pdf, SKM_C451i26012912163.pdf</td><td><span class="tag tag-nonlu">NON LU</span></td><td>Scans divers (3 fichiers)</td></tr>
+<tr><td>CHEQUE TAXE FONCIERE.pdf, Avis reglement complementaire.pdf, let ret act corres.pdf</td><td><span class="tag tag-nonlu">NON LU</span></td><td>Documents administratifs divers</td></tr>
+<tr><td>MI 21-094 (4 fichiers variantes)</td><td><span class="tag tag-nonlu">NON LU</span></td><td>Documents mesure d'instruction (complement consignation, delai)</td></tr>
+<tr><td>Courrier expert LANDIN du 05-09-23.pdf</td><td><span class="tag tag-nonlu">NON LU</span></td><td>Courrier d'un expert LANDIN (identite non clarifiee)</td></tr>
+<tr><td>Courrier SODEREF Ingenierie.pdf, Lettre a SERRES (2).pdf, Courrier Fontaine ordonnance.pdf</td><td><span class="tag tag-nonlu">NON LU</span></td><td>Courriers divers</td></tr>
+<tr><td>Courriers de convocation des avocats des parties.pdf</td><td><span class="tag tag-nonlu">NON LU</span></td><td>Convocations avocats</td></tr>
+
+<!-- MESSAGES OUTLOOK -->
+<tr class="cat-header"><td colspan="3">Messages Outlook .msg (3)</td></tr>
+<tr><td>20200822 - MMA - T2C C_ EDELIS - SDC ECLAT DE VERT.msg</td><td><span class="tag tag-na">N/A</span></td><td>Format Outlook non lisible. Email MMA/T2C de 2020.</td></tr>
+<tr><td>Retour annalyse T2C.msg</td><td><span class="tag tag-na">N/A</span></td><td>Format Outlook non lisible. Retour analyse T2C.</td></tr>
+<tr><td>TJ ROUEN - Affaire SDC ECLAT DE VERT c_ EDELIS RG 20-455.msg</td><td><span class="tag tag-na">N/A</span></td><td>Format Outlook non lisible. Email du TJ Rouen.</td></tr>
+
+<!-- EMAILS -->
+<tr class="cat-header email"><td colspan="3">Emails .eml du dossier Procedure (31) - TOUS LUS</td></tr>
+<tr><td>31 emails (procedure Eclat de vert, assignation, URGENT, dire n6, DO balcons, TR 20160333)</td><td><span class="tag tag-lu">LU</span></td><td>Transmissions PJ par Amandine/Fanny (C21). Decision unanime CS mise en cause ARCHITHEOS (sept 2024). Remarque Pinsard facades (mai 2024). Declaration DO balcons (oct 2024). Aucune info non deja couverte par les courriers avocat.</td></tr>
+
 </table>
 </section>
 
 </div>
-<div class="footer">Inventaire genere le 13 juin 2026 - Sessions 1, 2 et 3 completees - 66/232 lus (28%)</div>
+<div class="footer">Inventaire reorganise par type - 22 juin 2026 - 75+ documents lus sur 232</div>
 </body>
 </html>
